@@ -1,0 +1,21 @@
+# Minimal config used by `supabase functions deploy` / `supabase db push`.
+# project_id is only a local label; the real project is chosen with `supabase link`.
+project_id = "trustvault"
+
+# We verify the user's JWT ourselves inside every function (supabase.auth.getUser),
+# so unauthenticated attempts reach our code and can be written to the audit log.
+# The Supabase gateway check would also accept the public anon key as "valid".
+[functions.upload-document]
+verify_jwt = false
+[functions.get-document]
+verify_jwt = false
+[functions.download-document]
+verify_jwt = false
+[functions.update-document]
+verify_jwt = false
+[functions.delete-document]
+verify_jwt = false
+[functions.grant-permission]
+verify_jwt = false
+[functions.revoke-permission]
+verify_jwt = false
