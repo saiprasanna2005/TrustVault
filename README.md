@@ -4,7 +4,25 @@ A document-sharing app where **the server and database, not the React UI, decide
 
 Stack: React + Vite + TypeScript · Tailwind CSS 4 · Supabase Auth · Supabase PostgreSQL with Row-Level Security · private Supabase Storage · Supabase Edge Functions (Deno/TypeScript) · Vitest.
 
-> **Status honesty.** See [Verification status](#verification-status) for exactly which tests have been executed and which you must still run yourself. Nothing here has been deployed by the author of this file; deployment is a step you perform (instructions below).
+<!-- > **Status honesty.** See [Verification status](#verification-status) for exactly which tests have been executed and which you must still run yourself. Nothing here has been deployed by the author of this file; deployment is a step you perform (instructions below). -->
+
+> **Deployment status.** TrustVault is deployed on Vercel. The live application has been tested for login, document upload, download, and document sharing. See the Verification Status section for the distinction between completed live checks and automated security tests that have not yet been executed.
+
+
+---
+
+## Live Demo
+
+* **Live Application:** https://trustvault-delta-ten.vercel.app/
+* **GitHub Repository:** https://github.com/saiprasanna2005/TrustVault
+
+## Live Features Tested
+
+* User login and authentication
+* Document upload
+* Document download
+* Document sharing with another account
+* Permission management and access revocation
 
 ---
 
@@ -178,7 +196,8 @@ Last verified in the authoring sandbox (Node 22, Deno 2.9.6, no internet access 
 | Edge Functions behaviour on real Supabase | **Not executed.** Type-checked only |
 | `tests/integration/security.test.ts` (live) | **Written, NOT executed. You must run it** |
 | Real Supabase Storage / Auth / PostgREST behaviour | **Not executed** here |
-| Vercel deployment | **Not done** |
+<!-- | Vercel deployment | **Not done** | -->
+| Vercel deployment | Deployed and accessible |
 
 The PGlite tests prove the SQL logic (policies, privileges, triggers, hash chain). They use a small stub of Supabase's `auth`/`storage` schemas, so they cannot prove everything about hosted Supabase. That is what `test:security` is for.
 
